@@ -1,4 +1,4 @@
-(function () {
+function getNews() {
     $.ajax({
         type: "get",
         url: "./news.json",
@@ -11,4 +11,4 @@
             $("#news").html(html);
         }
     });
-})();
+});
