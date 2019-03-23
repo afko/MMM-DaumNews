@@ -22,14 +22,23 @@ Module.register('MMM-DaumNews', {
             'news_test.js'
         ];
     },
+    getStyles: function () {
+        return ["font-awesome.css"];
+    },
 
     getDom: function () {
         var wrapper = document.createElement("div");
         wrapper.id = "news";
         wrapper.innerHTML = this.config.text;
+
+        var symbol =  document.createElement("span");
+        symbol.className = "fa fa-home";
+        wrapper.appendChild(symbol);
+
         getNews();
         console.log("There is no problem");
         Log.error('error');
+        
         return wrapper;
     }
 });
