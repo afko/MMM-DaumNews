@@ -5,7 +5,7 @@
  * 
  */
 
-module.register('MMM-DaumNews', {
+Module.register('MMM-DaumNews', {
     defaults: {
         text: "Hi"
     },
