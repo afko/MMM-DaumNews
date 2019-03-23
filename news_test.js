@@ -11,4 +11,4 @@ function getNews() {
             $("#news").html(html);
         }
     });
-});
+};
