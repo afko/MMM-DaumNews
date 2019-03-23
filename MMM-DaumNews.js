@@ -9,6 +9,12 @@ Module.register('MMM-DaumNews', {
     defaults: {
         text: "Hi"
     },
+    start: function () {
+        var self = this;
+        setInterval(function () {
+            self.updateDom(); // no speed defined, so it updates instantly.
+        }, 1000); //perform every 1000 milliseconds.
+    },
 
     getScripts: function () {
         return [
@@ -22,6 +28,8 @@ Module.register('MMM-DaumNews', {
         wrapper.id = "news";
         wrapper.innerHTML = this.config.text;
         getNews();
+        console.log("There is no problem");
+        Log.error('error');
         return wrapper;
     }
 });
