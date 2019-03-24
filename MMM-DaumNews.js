@@ -40,6 +40,7 @@ Module.register('MMM-DaumNews', {
 
         var wrapper = document.createElement("div");
         wrapper.id = "NEWS";
+        
         if (this.dataFile) {
             wrapper.innerHTML = "[" + this.config.newsNum + "] ";
             wrapper.innerHTML += this.dataFile[this.config.newsNum].title;
