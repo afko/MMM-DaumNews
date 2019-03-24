@@ -28,4 +28,4 @@ for i in range(1, 11):
     
 toJson(temp_dict)
 
-chrome.close();
+chrome.close()
