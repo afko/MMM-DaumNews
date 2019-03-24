@@ -10,7 +10,7 @@ Module.register('MMM-DaumNews', {
         text: "Hi",
         updateInterval: 3000,
         fadeSpeed: 4000,
-        updateInterval: 30 * 60 * 1000,
+        updateInterval: 30 * 1000,
         newsNum: 1
     },
 
@@ -19,8 +19,7 @@ Module.register('MMM-DaumNews', {
 
         setInterval(function () {
             self.updateDom(self.config.fadeSpeed);
-            if (this.config.newsNum < 10) this.config.newsNum += 1;
-            else this.config.newsNum = 1;
+            if (this.config.newsNum < 10) this.config.newsNum = 1;
         }, this.config.updateInterval);
     },
 
@@ -50,6 +49,8 @@ Module.register('MMM-DaumNews', {
         } else {
             wrapper.innerHTML = "No data";
         }
+
+        this.config.newsNum += 1;
         return wrapper;
     }
 });
