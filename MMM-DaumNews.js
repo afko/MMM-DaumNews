@@ -8,10 +8,10 @@
 Module.register('MMM-DaumNews', {
     defaults: {
         text: "Hi",
-        updateInterval: 3000,
+        updateNewsInterval: 7 * 1000, // 7 secs 
         fadeSpeed: 4000,
-        updateInterval: 30 * 1000,
-        newsNum: 1
+        updateInterval: 30 * 1000, // 30 secs
+        newsNum: 0
     },
 
     start: function () {
@@ -19,8 +19,7 @@ Module.register('MMM-DaumNews', {
 
         setInterval(function () {
             self.updateDom(self.config.fadeSpeed);
-            if (this.config.newsNum < 10) this.config.newsNum = 1;
-        }, this.config.updateInterval);
+        }, this.config.updateNewsInterval);
     },
 
     socketNotificationReceived: function (notification, payload) {
@@ -49,8 +48,9 @@ Module.register('MMM-DaumNews', {
         } else {
             wrapper.innerHTML = "No data";
         }
+        if (this.config.newsNum > 10) this.config.newsNum = 1;
+        else this.config.newsNum += 1;
 
-        this.config.newsNum += 1;
         return wrapper;
     }
 });
