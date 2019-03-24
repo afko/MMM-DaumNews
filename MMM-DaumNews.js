@@ -31,16 +31,19 @@ Module.register('MMM-DaumNews', {
         ];
     },
     getStyles: function () {
-        return ["font-awesome.css"];
+        return [
+            "font-awesome.css",
+            "MMM-DaumNews.css"];
     },
 
     getDom: function () {
 
         var wrapper = document.createElement("div");
+        wrapper.id = "news"
         if (this.dataFile) {
             wrapper.innerHTML = "[" + this.config.newsNum + "] ";
             wrapper.innerHTML += this.dataFile[this.config.newsNum].title;
-            wrapper.innerHTML += " - " +this.dataFile[this.config.newsNum].info_news;
+            wrapper.innerHTML += " - " + this.dataFile[this.config.newsNum].info_news;
         } else {
             wrapper.innerHTML = "No data";
         }
