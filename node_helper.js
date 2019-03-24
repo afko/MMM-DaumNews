@@ -18,7 +18,7 @@ module.exports = NodeHelper.create({
 		//to read a file to do the following
 		fs.readFile("./modules/MMM-DaumNews/news.json", "utf8", (err, data) => {
 			if (err) throw err;
-			this.sendSocketNotification("DATA", data);
+			this.sendSocketNotification("DATA", JSON.parse(data));
 		});
 	}
 });
