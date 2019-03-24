@@ -8,18 +8,14 @@
 Module.register('MMM-DaumNews', {
     defaults: {
         text: "Hi",
-        updateNewsInterval: 7 * 1000, // 7 secs 
+        updateNewsInterval: 5 * 1000, // 7 secs 
         fadeSpeed: 4000,
-        updateInterval: 30 * 1000, // 30 secs
+        updateInterval: 10 * 1000, // 30 secs
         newsNum: 0
     },
 
     start: function () {
         this.sendSocketNotification("START", this.config);
-
-        setInterval(function () {
-            self.updateDom(self.config.fadeSpeed);
-        }, this.config.updateNewsInterval);
     },
 
     socketNotificationReceived: function (notification, payload) {
@@ -50,6 +46,8 @@ Module.register('MMM-DaumNews', {
         }
         if (this.config.newsNum > 10) this.config.newsNum = 1;
         else this.config.newsNum += 1;
+
+        
 
         return wrapper;
     }
