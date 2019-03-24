@@ -24,3 +24,5 @@ for i in range(1, 11):
     temp_dict[i] = {'title': title, 'info_news':info_news, 'link':link}
     
 toJson(temp_dict)
+
+chrome.close();
