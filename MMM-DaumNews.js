@@ -34,7 +34,10 @@ Module.register('MMM-DaumNews', {
     getDom: function(){
 		var wrapper = document.createElement("div");
 		if(this.dataFile){
-			wrapper.innerHTML = this.dataFile;
+            // wrapper.innerHTML = this.dataFile;
+            let loadedJSON= JSON.parse(this.dataFile);
+            wrapepr.innerHTML = loadedJSON.title; 
+            
 		} else {
 			wrapper.innerHTML = "No data";
 		}
