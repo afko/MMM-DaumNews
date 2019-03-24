@@ -9,7 +9,10 @@ def toJson(news_dict):
     with open('news.json', 'w', encoding='utf-8') as file :
         json.dump(news_dict, file, ensure_ascii=False, indent='\t')
 
-chrome = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
+options = webdriver.ChromeOptions()
+options.add_argument('headless')
+
+chrome = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver", chrome_options=options)
 chrome.implicitly_wait(10)
 chrome.get("https://media.daum.net/ranking/kkomkkom/")
 chrome.implicitly_wait(3)
