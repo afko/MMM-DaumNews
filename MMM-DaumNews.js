@@ -32,24 +32,32 @@ Module.register('MMM-DaumNews', {
     getStyles: function () {
         return [
             "font-awesome.css",
-            "MMM-DaumNews.css"];
+            "MMM-DaumNews.css"
+        ];
     },
 
     getDom: function () {
 
         var wrapper = document.createElement("div");
         wrapper.id = "NEWS";
+        var aTag = document.createElement("a");
+        aTag.id = "aTAG";
+
 
         if (this.dataFile) {
             wrapper.innerHTML = "#" + this.config.newsNum + "  ";
-            wrapper.innerHTML += this.dataFile[this.config.newsNum].title;
-            wrapper.innerHTML += " - " + this.dataFile[this.config.newsNum].info_news;
+
+            aTag.href = this.dataFile[this.config.newsNum].link;
+            aTag.innerHTML = this.dataFile[this.config.newsNum].title + " - " + this.dataFile[this.config.newsNum].info_news;
+
+            wrapper.appendChild(aTag);
+
         } else {
             wrapper.innerHTML = "No data";
         }
         if (this.config.newsNum >= 10) this.config.newsNum = 1;
         else this.config.newsNum += 1;
-        
+
         return wrapper;
     }
 });
