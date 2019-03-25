@@ -2,6 +2,18 @@
    font-size: 1.3rem;
 }
 
-#aTAG {
+
+#aTAG:link {
+   color: grey;
+   text-decoration: none;
+}
+
+#aTAG:visited {
+   color: grey;
+   text-decoration: none;
+}
+
+#aTAG:hover {
+   color: grey;
    text-decoration: none;
 }
