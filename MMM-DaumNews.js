@@ -41,7 +41,7 @@ Module.register('MMM-DaumNews', {
         wrapper.id = "NEWS";
 
         if (this.dataFile) {
-            wrapper.innerHTML = "#" + this.config.newsNum + "  ";
+            wrapper.innerHTML = "##" + this.config.newsNum + "  ";
             wrapper.innerHTML += this.dataFile[this.config.newsNum].title;
             wrapper.innerHTML += " - " + this.dataFile[this.config.newsNum].info_news;
         } else {
